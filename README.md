@@ -39,7 +39,7 @@ configure the database in the settings
 ```
 7. Run Migration commands
 ```
-    $ python manage.py makemigration
+    $ python manage.py makemigrations
     $ python manage.py migrate
 ```
 8. Run populate.py script file to load the data into database
