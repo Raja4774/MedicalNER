@@ -1,6 +1,6 @@
 # MedicalNER
 MedicalNER which can extract medicine from a given text and then fetch its information from the database
-# Follow the steps below to run the application
+## Follow the steps below to run the application
 
 install postgreSQL as DataBase
 configure the database in the settings
@@ -54,7 +54,7 @@ configure the database in the settings
 ```
     $ python manage.py runserver
 ```
-11. User the url to check the functionality
+11. Use the url to check the functionality
 ```
     http://127.0.0.1:8000/search/
 ```
