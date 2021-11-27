@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Search Index</title>
+    <style>
+        .head {
+            color: white;
+            background-color:silver;
+            padding: 1%;
+            text-align: center;
+            top: 0;
+            position: sticky;
+            border-radius: 10px;
+        }
+        .content {
+            background-color: DarkCyan;
+            color: white;
+            margin: 1px 1px 1px;
+            padding: 2%;
+            align-items: center;
+            overflow: auto;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function clear(){
+            document.getElementById('name').value=null
+            document.getElementById('manufacturer').value=null
+            document.getElementById('salt').value=null
+        }
+    </script>
+</head>
+
+<body onload="clear()">
+    <div class='head'>
+        <h2 class='title'>Medical NER</h2>
+    </div>
+    <div class="content">
+        <form class="form-inline" action="by_name/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Name" class="form-label">Search by Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name here to search" name="name" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search">
+        </form>
+    </div>
+    <div class="content">
+        <form class="form-inline" action="by_manufacturer/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="manufacturer" class="form-label">Search by Manufacturer</label>
+                <input type="text" class="form-control" id="manufacturer" placeholder="Enter Manufacturer Name here to search" name="manufacturer" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search">
+        </form>
+    </div>
+    <div class="content">
+        <form class="form-inline" action="by_salt/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="salt" class="form-label">Search by Name</label>
+                <input type="text" class="form-control" id="salt" placeholder="Enter Salt Name here to search" name="salt" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search">
+        </form>
+    </div>
+</body>
+
+</html>

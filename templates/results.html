@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Search Results</title>
+    <style>
+        .head {
+            color: black;
+            background-color: lawngreen;
+            padding: 3%;
+            text-align: center;
+            top: 0;
+            position: sticky;
+            border-radius: 10px;
+        }
+
+        .content {
+            background-color: DarkCyan;
+            color: white;
+            margin: 1px 1px 1px;
+            padding: 2%;
+            align-items: center;
+            overflow: auto;
+            border-radius: 10px;
+        }
+
+        .dataframe {
+            margin-left: auto;
+            margin-right: auto;
+            border-color: black;
+            align-self: center;
+
+        }
+
+        th,
+        td,
+        tr {
+            padding: 10px;
+        }
+
+        .title,
+        .back {
+            display: inline-block;
+        }
+
+        .back {
+            float: right;
+            padding: 5px 15px 5px 15px;
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back()
+        }
+    </script>
+</head>
+
+<body>
+    <div class='head'>
+        <h2 class='title'>Search Results for '{{name}}'</h2>
+        <button class="btn btn-primary back" onclick="goBack()">Back</button><br>
+    </div>
+    <div class="content">{{data | safe}}</div>
+</body>
+
+</html>
